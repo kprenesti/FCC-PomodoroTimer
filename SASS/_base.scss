@@ -1,0 +1,25 @@
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  .controlPanel {
+    background-color: lightgrey;
+    color: darkgrey;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    .intervalHolder {
+      height: 100%;
+      width: 40%;
+    }
+    #workIntervalHolder {
+      margin-left: 30px;
+      float: left;
+    }
+  }
+}
+
+body {
+  background-color: #3DB7E0;
+  color: white;
+}

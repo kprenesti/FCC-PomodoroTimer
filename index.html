@@ -4,28 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="wrapper">
-      <div class="controls">
-        <div id="pomIntervalHolder" class="intervalHolder">
-          <div class="plus"></div>
-          <div class="displayInterval">
+      <a href="http://www.freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank"><h1>FCC Assignment: Pomodoro Timer</h1></a>
+      <div class="controlPanel">
+        <div id="workIntervalHolder" class="intervalHolder">
+          <span class="workLabel">Work Time</span>
+          <button type="button" class="control" id="addWork"> + </button>
+          <div class="displayInterval" id="intervalTime">
             <!--fill this section with JS innerHTML-->
           </div>
-          <div class="minus"></div>
-        </div>
+          <button type="button" id="subWork" class="control"> - </button>
+        </div><!-- work interval holder -->
         <div id="restIntervalHolder" class="intervalHolder">
-          <div class="plus"></div>
+          <span class="controlLabel">Rest Time</span>
+          <button id="addRest" class="control" type="button"> + </button>
           <div class="intervalDisplay">
-            <!--fill this section with JS innerHTML-->
+
           </div>
-          <div class="minus"></div>
-        </div><!--end restIntervalHolder-->
-      </div><!--end controls-->
+          <button class="control" id="subRest" type="button"> - </button>
+        </div><!-- end restIntervalHolder -->
+      </div><!-- end controls Div -->
       <div class="timeCircle">
         <div id="countdownHolder" class="displayInterval"></div>
       </div>
-    </div><!--end wrapper-->
+    </div><!-- end wrapper -->
   </body>
 </html>

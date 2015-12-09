@@ -11,24 +11,24 @@
       <a href="http://www.freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank"><h1>FCC Assignment: Pomodoro Timer</h1></a>
       <div class="controlPanel">
         <div id="workIntervalHolder" class="intervalHolder">
-          <span class="workLabel">Work Time</span>
+          <span class="controlLabel">Work Time</span><br>
           <button type="button" class="control" id="addWork"> + </button>
           <div class="displayInterval" id="intervalTime">
-            <!--fill this section with JS innerHTML-->
+            <span class="intervalDigits" id="workDigits">25 mins</span>
           </div>
           <button type="button" id="subWork" class="control"> - </button>
         </div><!-- work interval holder -->
         <div id="restIntervalHolder" class="intervalHolder">
-          <span class="controlLabel">Rest Time</span>
+          <span class="controlLabel">Rest Time</span><br>
           <button id="addRest" class="control" type="button"> + </button>
-          <div class="intervalDisplay">
-
+          <div class="displayInterval">
+            <span class="intervalDigits" id="restDigits">05 mins</span>
           </div>
           <button class="control" id="subRest" type="button"> - </button>
         </div><!-- end restIntervalHolder -->
       </div><!-- end controls Div -->
       <div class="timeCircle">
-        <div id="countdownHolder" class="displayInterval"></div>
+        <span id="countdownDigits">25 mins</span>
       </div>
     </div><!-- end wrapper -->
   </body>

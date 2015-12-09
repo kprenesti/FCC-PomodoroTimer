@@ -1,25 +1,82 @@
+$turq: #3DB7E0;
+
+
+body {
+  background-color: $turq;
+  color: white;
+}
+
+//===============FROM TOP TO END OF CONTROL PANEL===============//
+
 .wrapper {
+  text-align: center;
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  //===========CONTROL PANEL START=========//
   .controlPanel {
-    background-color: lightgrey;
-    color: darkgrey;
-    height: 100px;
+    text-align: center;
+    background-color: black;
+    height: 20vh;
     width: 100%;
     overflow: hidden;
     .intervalHolder {
       height: 100%;
       width: 40%;
+      display: inline-block;
     }
-    #workIntervalHolder {
-      margin-left: 30px;
-      float: left;
+    
+  }
+  
+  .displayInterval {
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+}
+  
+.control {
+  margin: 0;
+  padding: 18.5px 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.intervalDigits {
+  font-weight: bold;
+  color: #666;
+}
+
+.controlLabel {
+  font-size: 1.2em;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0 0 0;
+  color: $turq;
+  margin-top: 5px;
+}
+  
+  //===========COUNTDOWN START========//
+  
+  .timeCircle {
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    border: 10px solid black;
+    margin: 30px auto;
+    background-color: white;
+    #countdownDigits {
+      text-align: center;
+      font-size: 4em;
+      font-weight: bold;
+      line-height: 60vh;
+      color: black;
+      vertical-align: middle;
+
     }
   }
 }
 
-body {
-  background-color: #3DB7E0;
-  color: white;
-}

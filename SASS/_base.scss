@@ -24,9 +24,15 @@ body {
     height: 20vh;
     width: 100%;
     overflow: hidden;
+    .resetButton {
+      color: black;
+      font-weight: bold;
+      padding: 5px;
+    }
     .intervalHolder {
       height: 100%;
-      width: 40%;
+//      width: 40%;
+      padding: 0 20px;
       display: inline-block;
     }
     
@@ -47,7 +53,7 @@ body {
 
 .intervalDigits {
   font-weight: bold;
-  color: #666;
+  color: black;
 }
 
 .controlLabel {
@@ -61,7 +67,7 @@ body {
   
   //===========COUNTDOWN START========//
   
-  .timeCircle {
+  #timeCircle {
     width: 60vh;
     height: 60vh;
     border-radius: 50%;

@@ -377,9 +377,13 @@ body {
     height: 20vh;
     width: 100%;
     overflow: hidden; }
+    .wrapper .controlPanel .resetButton {
+      color: black;
+      font-weight: bold;
+      padding: 5px; }
     .wrapper .controlPanel .intervalHolder {
       height: 100%;
-      width: 40%;
+      padding: 0 20px;
       display: inline-block; }
   .wrapper .displayInterval {
     display: inline-block;
@@ -392,7 +396,7 @@ body {
     font-weight: bold; }
   .wrapper .intervalDigits {
     font-weight: bold;
-    color: #666; }
+    color: black; }
   .wrapper .controlLabel {
     font-size: 1.2em;
     font-weight: bold;
@@ -400,14 +404,14 @@ body {
     padding: 5px 0 0 0;
     color: #3DB7E0;
     margin-top: 5px; }
-  .wrapper .timeCircle {
+  .wrapper #timeCircle {
     width: 60vh;
     height: 60vh;
     border-radius: 50%;
     border: 10px solid black;
     margin: 30px auto;
     background-color: white; }
-    .wrapper .timeCircle #countdownDigits {
+    .wrapper #timeCircle #countdownDigits {
       text-align: center;
       font-size: 4em;
       font-weight: bold;

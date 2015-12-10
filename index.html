@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="JavaScript/jquery-1.11.3.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -22,14 +23,17 @@
           <span class="controlLabel">Rest Time</span><br>
           <button id="addRest" class="control" type="button"> + </button>
           <div class="displayInterval">
-            <span class="intervalDigits" id="restDigits">05 mins</span>
+            <span class="intervalDigits" id="restDigits"></span>
           </div>
           <button class="control" id="subRest" type="button"> - </button>
         </div><!-- end restIntervalHolder -->
+        <button class="resetButton" id="reset" type="reset">Set Pomodoro</button>
+
       </div><!-- end controls Div -->
-      <div class="timeCircle">
-        <span id="countdownDigits">25 mins</span>
+      <div id="timeCircle">
+        <span id="countdownDigits">Start Timer</span>
       </div>
     </div><!-- end wrapper -->
+    <script src="JavaScript/main.js"></script>
   </body>
 </html>

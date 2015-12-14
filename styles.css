@@ -385,6 +385,15 @@ body {
       height: 100%;
       padding: 0 20px;
       display: inline-block; }
+    .wrapper .controlPanel .buttonBox {
+      display: inline-block;
+      position: relative;
+      top: 20px; }
+      .wrapper .controlPanel .buttonBox .blockButton {
+        display: block;
+        width: 100%; }
+        .wrapper .controlPanel .buttonBox .blockButton:first-child {
+          margin-bottom: 5px; }
   .wrapper .displayInterval {
     display: inline-block;
     background-color: white;
@@ -404,16 +413,26 @@ body {
     padding: 5px 0 0 0;
     color: #3DB7E0;
     margin-top: 5px; }
+  .wrapper .start {
+    background-color: forestgreen;
+    color: white;
+    padding: 10px; }
+  .wrapper .stop {
+    background-color: red;
+    color: white;
+    padding: 10px; }
+  .wrapper .invisible {
+    display: none !important; }
   .wrapper #timeCircle {
     width: 60vh;
     height: 60vh;
     border-radius: 50%;
     border: 10px solid black;
-    margin: 30px auto;
+    margin: 10px auto;
     background-color: white; }
     .wrapper #timeCircle #countdownDigits {
       text-align: center;
-      font-size: 4em;
+      font-size: 3em;
       font-weight: bold;
       line-height: 60vh;
       color: black;

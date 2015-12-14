@@ -35,6 +35,18 @@ body {
       padding: 0 20px;
       display: inline-block;
     }
+    .buttonBox {
+      display: inline-block;
+      position: relative;
+      top: 20px;
+      .blockButton {
+        display: block;
+        width: 100%;
+        &:first-child {
+         margin-bottom: 5px;
+        }
+      }
+    }
     
   }
   
@@ -66,17 +78,29 @@ body {
 }
   
   //===========COUNTDOWN START========//
-  
+  .start {
+    background-color: forestgreen;
+    color: white;
+    padding: 10px;
+  }
+  .stop{
+    background-color: red;
+    color: white;
+    padding: 10px;
+  }
+  .invisible{
+    display: none !important;
+  }
   #timeCircle {
     width: 60vh;
     height: 60vh;
     border-radius: 50%;
     border: 10px solid black;
-    margin: 30px auto;
+    margin: 10px auto;
     background-color: white;
     #countdownDigits {
       text-align: center;
-      font-size: 4em;
+      font-size: 3em;
       font-weight: bold;
       line-height: 60vh;
       color: black;

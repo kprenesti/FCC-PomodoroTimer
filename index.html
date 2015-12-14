@@ -27,11 +27,17 @@
           </div>
           <button class="control" id="subRest" type="button"> - </button>
         </div><!-- end restIntervalHolder -->
-        <button class="resetButton" id="reset" type="reset">Set Pomodoro</button>
+        <div class="buttonBox">
+          <div id="startStop">
+            <button class="blockButton start">Start Timer</button>
+            <button class="blockButton stop invisible">Stop Timer</button>
+          </div>
+          <button class="resetButton blockButton" id="reset" type="reset">Reset Pomodoro</button>
 
+        </div>
       </div><!-- end controls Div -->
       <div id="timeCircle">
-        <span id="countdownDigits">Start Timer</span>
+        <span id="countdownDigits">Let's Go!</span>
       </div>
     </div><!-- end wrapper -->
     <script src="JavaScript/main.js"></script>

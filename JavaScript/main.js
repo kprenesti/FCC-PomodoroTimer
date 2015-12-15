@@ -7,8 +7,14 @@ $(document).ready(function(){
   var adjustedWorkTime = defaultTimeInt;
   var workIntervalID;
   var minsRemaining, secsRemaining;
+  var alert = new Audio();
+  alert.src = "ion.sound-3.0.6/sounds/bell_ring.mp3";
   
-
+  function playSound(){
+    alert.play();
+  }
+  
+  
   //REST DISPLAY AND TIMES
   $('#restDigits').html(defaultRestTimeInt/oneMinute + ' Mins');
   
@@ -57,9 +63,16 @@ $('#reset').on('click', resetTimes);
        workTimer -= oneSecond;
        minsRemaining = parseInt(workTimer/oneMinute);
        secsRemaining = parseInt(workTimer % oneMinute);
-       console.log("minsRemaining = "+minsRemaining, "secsRemaining = "+secsRemaining);
        $('#countdownDigits').html(minsRemaining + " : " + secsRemaining/oneSecond);
+       $('#status').html('Work Time');
+      if(minsRemaining < 10){
+        $('#countdownDigits').html("0"+minsRemaining + " : " + secsRemaining/oneSecond);
+      } 
+      if(secsRemaining < 10){
+        $('#countdownDigits').html("Work<br>"+minsRemaining + " : 0" + secsRemaining/oneSecond);
+      }
       if(minsRemaining === 0 && secsRemaining === 0){
+        playSound();
         clearInterval(workIntervalID);
         restTicker(adjustedRestTime);
       }
@@ -71,9 +84,16 @@ $('#reset').on('click', resetTimes);
        workTimer -= oneSecond;
        minsRemaining = parseInt(workTimer/oneMinute);
        secsRemaining = parseInt(workTimer % oneMinute);
-       console.log("minsRemaining = "+minsRemaining, "secsRemaining = "+secsRemaining);
+      $('#status').html('Rest Time');
        $('#countdownDigits').html(minsRemaining + " : " + secsRemaining/oneSecond);
+      if(minsRemaining < 10){
+        $('#countdownDigits').html("0"+minsRemaining + " : " + secsRemaining/oneSecond);
+      } 
+      if(secsRemaining < 10){
+        $('#countdownDigits').html("Work<br>"+minsRemaining + " : 0" + secsRemaining/oneSecond);
+      }
       if(minsRemaining === 0 && secsRemaining === 0){
+        playSound();
         clearInterval(workIntervalID);
         workTicker(adjustedWorkTime);
       }
@@ -84,12 +104,14 @@ $('.start').on('click', function(){
   workTicker(adjustedWorkTime);
   $(this).addClass('invisible');
   $('.stop').removeClass('invisible');
+  $('#status').removeClass('invisible');
 });
 
 $('.stop').on('click', function(){
   clearInterval(workIntervalID);
   $(this).addClass('invisible');
   $('.start').removeClass('invisible');
+  $('#status').addClass('invisible');
   $('#countdownDigits').html('Start Timer');
 });
   

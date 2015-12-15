@@ -430,12 +430,19 @@ body {
     border: 10px solid black;
     margin: 10px auto;
     background-color: white; }
-    .wrapper #timeCircle #countdownDigits {
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      line-height: 60vh;
-      color: black;
+    .wrapper #timeCircle .display {
+      height: 60vh;
+      width: 60vh;
+      display: table-cell;
       vertical-align: middle; }
+      .wrapper #timeCircle .display #countdownDigits, .wrapper #timeCircle .display #status {
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        color: black;
+        line-height: 1.5; }
+      .wrapper #timeCircle .display #status {
+        margin-bottom: 40px; }
 
 /*# sourceMappingURL=styles.css.map */

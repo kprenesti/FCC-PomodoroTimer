@@ -98,14 +98,23 @@ body {
     border: 10px solid black;
     margin: 10px auto;
     background-color: white;
-    #countdownDigits {
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      line-height: 60vh;
-      color: black;
+    .display {
+      height: 60vh;
+      width: 60vh;
+      display: table-cell;
       vertical-align: middle;
-
+      #countdownDigits {
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        color: black;
+        line-height: 1.5;
+      }
+      #status {
+        @extend #countdownDigits;
+        margin-bottom: 40px;
+      }
     }
   }
 }

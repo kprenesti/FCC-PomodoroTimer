@@ -11,30 +11,35 @@
     <div class="wrapper">
       <a href="http://www.freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank"><h1>FCC Assignment: Pomodoro Timer</h1></a>
       <div class="controlPanel">
-        <div id="workIntervalHolder" class="intervalHolder">
-          <span class="controlLabel">Work Time</span><br>
-          <button type="button" class="control" id="addWork"> + </button>
-          <div class="displayInterval" id="intervalTime">
-            <span class="intervalDigits" id="workDigits">25 mins</span>
-          </div>
-          <button type="button" id="subWork" class="control"> - </button>
-        </div><!-- work interval holder -->
-        <div id="restIntervalHolder" class="intervalHolder">
-          <span class="controlLabel">Rest Time</span><br>
-          <button id="addRest" class="control" type="button"> + </button>
-          <div class="displayInterval">
-            <span class="intervalDigits" id="restDigits"></span>
-          </div>
-          <button class="control" id="subRest" type="button"> - </button>
-        </div><!-- end restIntervalHolder -->
-        <div class="buttonBox">
-          <div id="startStop">
-            <button class="blockButton start">Start Timer</button>
-            <button class="blockButton stop invisible">Stop Timer</button>
-          </div>
-          <button class="resetButton blockButton" id="reset" type="reset">Reset Pomodoro</button>
-
-        </div>
+        <div class="panelWrap">
+          <div id="workIntervalHolder" class="intervalHolder">
+            <span class="controlLabel">Work Time</span>
+            <div class="controlWrap">
+              <button type="button" class="control" id="addWork"> + </button>
+              <div class="displayInterval" id="intervalTime">
+                <span class="intervalDigits" id="workDigits">25 mins</span>
+              </div><!--end displayInterval-->
+              <button type="button" id="subWork" class="control"> - </button>
+            </div><!--end controlWrap-->
+          </div><!-- work interval holder -->
+          <div id="restIntervalHolder" class="intervalHolder">
+            <span class="controlLabel">Rest Time</span>
+            <div class="controlWrap">
+              <button id="addRest" class="control" type="button"> + </button>
+              <div class="displayInterval">
+                <span class="intervalDigits" id="restDigits"></span>
+              </div><!--end displayInterval -->
+            <button class="control" id="subRest" type="button"> - </button>
+            </div><!--end controlWrap -->
+          </div><!-- end restIntervalHolder -->
+          <div class="buttonBox">
+            <div id="startStop">
+              <button class="blockButton start">Start Timer</button>
+              <button class="blockButton stop invisible">Stop Timer</button>
+            </div><!--end startStop-->
+          <button class="resetButton blockButton" id="reset" type="reset">Reset Timer</button>
+        </div><!--end buttonBox-->
+        </div><!--end panelWrap -->
       </div><!-- end controls Div -->
       <div id="timeCircle">
         <div class="display">

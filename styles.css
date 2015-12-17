@@ -361,7 +361,12 @@ th {
 
 body {
   background-color: #3DB7E0;
-  color: white; }
+  color: white;
+  height: 100vh;
+  width: 100vw; }
+
+\:root {
+  font-size: 12px; }
 
 .wrapper {
   text-align: center;
@@ -374,65 +379,85 @@ body {
   .wrapper .controlPanel {
     text-align: center;
     background-color: black;
-    height: 20vh;
+    height: 7rem;
     width: 100%;
     overflow: hidden; }
-    .wrapper .controlPanel .resetButton {
-      color: black;
-      font-weight: bold;
-      padding: 5px; }
-    .wrapper .controlPanel .intervalHolder {
+    .wrapper .controlPanel .panelWrap {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
       height: 100%;
-      padding: 0 20px;
-      display: inline-block; }
+      margin: 0 auto;
+      overflow: hidden; }
+      .wrapper .controlPanel .panelWrap .intervalHolder {
+        padding: 0 1.25em;
+        display: block;
+        float: left; }
+        .wrapper .controlPanel .panelWrap .intervalHolder .controlLabel {
+          font-size: 1.2rem;
+          font-weight: bold;
+          display: block;
+          padding: .3em 0 0 0;
+          color: #3DB7E0;
+          margin-top: .3em; }
+        .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap {
+          height: 3em;
+          overflow: hidden; }
+          .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .control {
+            border: none;
+            display: block;
+            float: left;
+            margin: 0;
+            height: 100%;
+            padding: 0 .3em;
+            color: black;
+            font-weight: bold; }
+          .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval {
+            display: block;
+            float: left;
+            background-color: white;
+            line-height: 3em;
+            margin-top: 0;
+            padding-top: 0;
+            padding: 0 .5em; }
+            .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval .intervalDigits {
+              font-weight: bold;
+              color: black; }
     .wrapper .controlPanel .buttonBox {
-      display: inline-block;
-      position: relative;
-      top: 20px; }
+      display: block;
+      float: right;
+      height: 7em;
+      padding: .6em 0 0 0;
+      margin: 0 1em; }
       .wrapper .controlPanel .buttonBox .blockButton {
         display: block;
         width: 100%; }
         .wrapper .controlPanel .buttonBox .blockButton:first-child {
-          margin-bottom: 5px; }
-  .wrapper .displayInterval {
-    display: inline-block;
-    background-color: white;
-    padding: 20px; }
-  .wrapper .control {
-    margin: 0;
-    padding: 18.5px 5px;
-    color: black;
-    font-weight: bold; }
-  .wrapper .intervalDigits {
-    font-weight: bold;
-    color: black; }
-  .wrapper .controlLabel {
-    font-size: 1.2em;
-    font-weight: bold;
-    display: inline-block;
-    padding: 5px 0 0 0;
-    color: #3DB7E0;
-    margin-top: 5px; }
+          margin-bottom: .3em; }
+      .wrapper .controlPanel .buttonBox .resetButton {
+        color: black;
+        font-weight: bold;
+        padding: .3em; }
   .wrapper .start {
     background-color: forestgreen;
     color: white;
-    padding: 10px; }
+    padding: .6em; }
   .wrapper .stop {
     background-color: red;
     color: white;
-    padding: 10px; }
+    padding: .6em; }
   .wrapper .invisible {
     display: none !important; }
   .wrapper #timeCircle {
-    width: 60vh;
-    height: 60vh;
+    width: 22em;
+    height: 22em;
     border-radius: 50%;
-    border: 10px solid black;
-    margin: 10px auto;
+    border: .6em solid black;
+    margin: .6em auto;
     background-color: white; }
     .wrapper #timeCircle .display {
-      height: 60vh;
-      width: 60vh;
+      height: 22em;
+      width: 22em;
       display: table-cell;
       vertical-align: middle; }
       .wrapper #timeCircle .display #countdownDigits, .wrapper #timeCircle .display #status {
@@ -443,6 +468,74 @@ body {
         color: black;
         line-height: 1.5; }
       .wrapper #timeCircle .display #status {
-        margin-bottom: 40px; }
+        margin-bottom: 2.5em; }
+
+@media (max-width: 944px) {
+  .wrapper .panelWrap {
+    width: 100% !important; } }
+@media (max-width: 479px) {
+  .wrapper .controlPanel {
+    height: 11em !important; }
+    .wrapper .controlPanel .panelWrap {
+      flex-wrap: wrap; }
+
+  .buttonBox {
+    float: left;
+    width: 80%;
+    max-height: 3em;
+    overflow: hidden;
+    outline: 1px solid red; }
+    .buttonBox #startStop {
+      width: 48%;
+      height: 100%;
+      float: left;
+      margin-right: .5em; }
+    .buttonBox #reset.resetButton {
+      width: 48%;
+      height: 100%;
+      float: left;
+      padding: .6em; }
+    .buttonBox .blockButton {
+      height: 100%; } }
+@media (max-width: 306px) {
+  h1 {
+    font-size: 1.5rem; }
+
+  .wrapper > .controlPanel {
+    min-height: 15.5em; }
+    .wrapper > .controlPanel .control {
+      width: 3.5rem; }
+    .wrapper > .controlPanel .buttonBox {
+      max-height: 4em; }
+
+  .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval .intervalDigits {
+    font-weight: bold;
+    line-height: 2.5;
+    display: block;
+    font-size: 1.3rem; }
+
+  .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval {
+    display: block;
+    float: left;
+    background-color: white;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    padding: 0 .5em; }
+
+  #timeCircle {
+    height: 16rem !important;
+    width: 16rem !important;
+    border-radius: 0; }
+    #timeCircle .display {
+      height: 16rem !important;
+      width: 16rem !important;
+      border-radius: 0; }
+      #timeCircle .display #status {
+        font-size: 1rem;
+        text-align: center; }
+      #timeCircle .display #countdownDigits, .wrapper #timeCircle .display #status {
+        font-size: 1rem;
+        text-align: center; } }
 
 /*# sourceMappingURL=styles.css.map */

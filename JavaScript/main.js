@@ -16,7 +16,7 @@ $(document).ready(function(){
   
   
   //REST DISPLAY AND TIMES
-  $('#restDigits').html(defaultRestTimeInt/oneMinute + ' Mins');
+  $('#restDigits').html("0"+defaultRestTimeInt/oneMinute + ' Mins');
   
   $('#addRest').on('click', function(){
     adjustedRestTime += oneMinute;
@@ -47,8 +47,11 @@ $(document).ready(function(){
   
   //RESET TIMER TO DEFAULT
   function resetTimes(){
-    $('#workDigits').html(defaultTimeInt / oneMinute);
-    $('#restDigits').html(defaultRestTimeInt / oneMinute);
+    clearInterval(workIntervalID);
+    $('.stop').addClass('invisible');
+    $('.start').removeClass('invisible');
+    $('#workDigits').html(defaultTimeInt / oneMinute + " Mins");
+    $('#restDigits').html("0" + defaultRestTimeInt/oneMinute + " Mins");
     $('#countdownDigits').html(defaultTimeInt/ oneMinute + ' Mins');
     adjustedWorkTime = defaultTimeInt;
     adjustedRestTime = defaultRestTimeInt;
@@ -68,8 +71,8 @@ $('#reset').on('click', resetTimes);
       if(minsRemaining < 10){
         $('#countdownDigits').html("0"+minsRemaining + " : " + secsRemaining/oneSecond);
       } 
-      if(secsRemaining < 10){
-        $('#countdownDigits').html("Work<br>"+minsRemaining + " : 0" + secsRemaining/oneSecond);
+      if(parseInt(secsRemaining) < 10){
+        $('#countdownDigits').html(minsRemaining + " : 0" + secsRemaining/oneSecond);
       }
       if(minsRemaining === 0 && secsRemaining === 0){
         playSound();
@@ -90,7 +93,7 @@ $('#reset').on('click', resetTimes);
         $('#countdownDigits').html("0"+minsRemaining + " : " + secsRemaining/oneSecond);
       } 
       if(secsRemaining < 10){
-        $('#countdownDigits').html("Work<br>"+minsRemaining + " : 0" + secsRemaining/oneSecond);
+        $('#countdownDigits').html(minsRemaining + " : 0" + secsRemaining/oneSecond);
       }
       if(minsRemaining === 0 && secsRemaining === 0){
         playSound();

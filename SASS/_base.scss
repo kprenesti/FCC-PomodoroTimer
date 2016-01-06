@@ -1,20 +1,182 @@
+$turq: #3DB7E0;
+
+
+body {
+  background-color: $turq;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+\:root {
+  font-size: 12px;
+}
+//===============FROM TOP TO END OF CONTROL PANEL===============//
+
 .wrapper {
+  text-align: center;
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  //===========CONTROL PANEL START=========//
   .controlPanel {
-    background-color: lightgrey;
-    color: darkgrey;
-    height: 100px;
+    text-align: center;
+    background-color: black;
+    height: 7rem;
     width: 100%;
     overflow: hidden;
-    .intervalHolder {
+    .panelWrap {
+      display: flex;
+      //align-items: center;
+      justify-content: space-around;
+      width: 50%;
       height: 100%;
-      width: 40%;
+      margin: 0 auto;
+      overflow: hidden;
+      .intervalHolder {
+        padding: 0 1.25em;
+        display: block;
+        float: left;
+        .controlLabel {
+          font-size: 1.2rem;
+          font-weight: bold;
+          display: block;
+          padding: .3em 0 0 0;
+          color: $turq;
+          margin-top: .3em;
+        }
+        .controlWrap{
+          height: 3em;
+          overflow: hidden;
+          .control {
+            border: none;
+            display: block;
+            float: left;
+            margin: 0;
+            height: 100%;
+            padding: 0 .3em;
+            color: black;
+            font-weight: bold;
+          }
+          .displayInterval {
+            display: block;
+            float: left;
+            background-color: white;
+            line-height: 3em;
+            margin-top: 0;
+            padding-top: 0;
+            padding: 0 .5em;
+            .intervalDigits {
+              font-weight: bold;
+              color: black;
+            }
+          }//end displayInterval
+        } //end control wrap
+      }//end panelWrap
+    }//end intervalHolder
+    .buttonBox {
+      display: block;
+      float: right;
+      height: 7em;
+      padding: .6em 0 0 0;
+      margin: 0 1em;
+      .blockButton {
+        display: block;
+        width: 100%;
+        &:first-child {
+         margin-bottom:  .3em;
+        }
+      }
+      .resetButton {
+        color: black;
+        font-weight: bold;
+        
+        padding: .3em;
+      }
     }
-    #workIntervalHolder {
-      margin-left: 30px;
+    
+  }
+
+  
+  //===========COUNTDOWN START========//
+  .start {
+    background-color: forestgreen;
+    color: white;
+    padding: .6em;
+  }
+  .stop{
+    background-color: red;
+    color: white;
+    padding: .6em;
+  }
+  .invisible{
+    display: none !important;
+  }
+  #timeCircle {
+    width: 22em;
+    height: 22em;
+    border-radius: 50%;
+    border: .6em solid black;
+    margin: .6em auto;
+    background-color: white;
+    .display {
+      height: 22em;
+      width: 22em;
+      display: table-cell;
+      vertical-align: middle;
+      #countdownDigits {
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        color: black;
+        line-height: 1.5;
+      }
+      #status {
+        @extend #countdownDigits;
+        margin-bottom: 2.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 944px){
+  .wrapper .panelWrap {
+    width: 100% !important;
+  }
+} //end max-width 944
+
+@media (max-width: 479px){
+  .wrapper .controlPanel {
+    height: 11em !important;
+    .panelWrap {
+      flex-wrap: wrap;
+    }
+  }
+  .buttonBox {
+    float: left;
+    width: 80%;
+    max-height: 3em;
+    overflow: hidden;
+    outline: 1px solid red;
+    #startStop {
+      width: 48%;
+      height: 100%;
       float: left;
+      margin-right: .5em;
+    }
+    #reset.resetButton {
+      width: 48%;
+      height: 100%;
+      float: left;
+      padding: .6em;
+    }
+    .blockButton {
+      height: 100%;
     }
   }
 }
@@ -28,7 +190,54 @@
   font-weight: bold;
 }
 
-body {
-  background-color: #3DB7E0;
-  color: white;
+@media (max-width: 306px){
+  h1{
+    font-size: 1.5rem;
+  }
+  .wrapper > .controlPanel {
+    min-height: 15.5em;
+    .control{
+      width: 3.5rem;
+    }    
+    .buttonBox {
+      max-height: 4em;
+    }
+  }
+  
+  .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval .intervalDigits {
+    font-weight: bold;
+    line-height: 2.5;
+    display: block;
+    font-size: 1.3rem;
+  }
+  
+  .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval {
+    display: block;
+    float: left;
+    background-color: white;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    padding: 0 .5em;
+}
+  
+  #timeCircle {
+    height: 16rem !important;
+    width: 16rem !important;
+    border-radius: 0;
+    .display{
+      height: 16rem !important;
+      width: 16rem !important;
+      border-radius: 0;
+      #status {
+        font-size: 1rem;
+        text-align: center;
+      }
+      #countdownDigits {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+    }
+  }
 }

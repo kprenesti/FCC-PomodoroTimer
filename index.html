@@ -5,31 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="JavaScript/jquery-1.11.3.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <a href="http://www.freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank"><h1>FCC Assignment: Pomodoro Timer</h1></a>
       <div class="controlPanel">
-        <div id="workIntervalHolder" class="intervalHolder">
-          <span class="workLabel">Work Time</span>
-          <button type="button" class="control" id="addWork"> + </button>
-          <div class="displayInterval" id="intervalTime">
-            <!--fill this section with JS innerHTML-->
-          </div>
-          <button type="button" id="subWork" class="control"> - </button>
-        </div><!-- work interval holder -->
-        <div id="restIntervalHolder" class="intervalHolder">
-          <span class="controlLabel">Rest Time</span>
-          <button id="addRest" class="control" type="button"> + </button>
-          <div class="intervalDisplay">
-
-          </div>
-          <button class="control" id="subRest" type="button"> - </button>
-        </div><!-- end restIntervalHolder -->
+        <div class="panelWrap">
+          <div id="workIntervalHolder" class="intervalHolder">
+            <span class="controlLabel">Work Time</span>
+            <div class="controlWrap">
+              <button type="button" class="control" id="addWork"> + </button>
+              <div class="displayInterval" id="intervalTime">
+                <span class="intervalDigits" id="workDigits">25 mins</span>
+              </div><!--end displayInterval-->
+              <button type="button" id="subWork" class="control"> - </button>
+            </div><!--end controlWrap-->
+          </div><!-- work interval holder -->
+          <div id="restIntervalHolder" class="intervalHolder">
+            <span class="controlLabel">Rest Time</span>
+            <div class="controlWrap">
+              <button id="addRest" class="control" type="button"> + </button>
+              <div class="displayInterval">
+                <span class="intervalDigits" id="restDigits"></span>
+              </div><!--end displayInterval -->
+            <button class="control" id="subRest" type="button"> - </button>
+            </div><!--end controlWrap -->
+          </div><!-- end restIntervalHolder -->
+          <div class="buttonBox">
+            <div id="startStop">
+              <button class="blockButton start">Start Timer</button>
+              <button class="blockButton stop invisible">Stop Timer</button>
+            </div><!--end startStop-->
+          <button class="resetButton blockButton" id="reset" type="reset">Reset Timer</button>
+        </div><!--end buttonBox-->
+        </div><!--end panelWrap -->
       </div><!-- end controls Div -->
-      <div class="timeCircle">
-        <div id="countdownHolder" class="displayInterval"></div>
+      <div id="timeCircle">
+        <div class="display">
+          <span id="status" class="invisible"></span><br>
+          <span id="countdownDigits">Let's Go!</span>
+        </div>
       </div>
     </div><!-- end wrapper -->
+    <script type="text/javascript" src="ion.sound-3.0.6/ion.sound.min.js"></script>
+    <script type="text/javascript" src="JavaScript/main.js"></script>
   </body>
 </html>

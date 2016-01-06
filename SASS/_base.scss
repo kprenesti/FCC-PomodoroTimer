@@ -18,6 +18,15 @@
     }
   }
 }
+.intervalDisplay {
+  height: 100%;
+  width: 50%;
+  outline: 1px solid red;
+}
+.label {
+  font-family: sans-serif;
+  font-weight: bold;
+}
 
 body {
   background-color: #3DB7E0;

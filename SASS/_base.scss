@@ -94,14 +94,14 @@ body {
       .resetButton {
         color: black;
         font-weight: bold;
-        
+
         padding: .3em;
       }
     }
-    
+
   }
 
-  
+
   //===========COUNTDOWN START========//
   .start {
     background-color: forestgreen;
@@ -162,7 +162,6 @@ body {
     width: 80%;
     max-height: 3em;
     overflow: hidden;
-    outline: 1px solid red;
     #startStop {
       width: 48%;
       height: 100%;
@@ -183,7 +182,6 @@ body {
 .intervalDisplay {
   height: 100%;
   width: 50%;
-  outline: 1px solid red;
 }
 .label {
   font-family: sans-serif;
@@ -198,19 +196,19 @@ body {
     min-height: 15.5em;
     .control{
       width: 3.5rem;
-    }    
+    }
     .buttonBox {
       max-height: 4em;
     }
   }
-  
+
   .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval .intervalDigits {
     font-weight: bold;
     line-height: 2.5;
     display: block;
     font-size: 1.3rem;
   }
-  
+
   .wrapper .controlPanel .panelWrap .intervalHolder .controlWrap .displayInterval {
     display: block;
     float: left;
@@ -220,7 +218,7 @@ body {
     padding-top: 0;
     padding: 0 .5em;
 }
-  
+
   #timeCircle {
     height: 16rem !important;
     width: 16rem !important;
@@ -237,7 +235,7 @@ body {
         font-size: 1rem;
         text-align: center;
       }
-      
+
     }
   }
 }

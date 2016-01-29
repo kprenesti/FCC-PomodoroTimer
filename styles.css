@@ -483,8 +483,7 @@ body {
     float: left;
     width: 80%;
     max-height: 3em;
-    overflow: hidden;
-    outline: 1px solid red; }
+    overflow: hidden; }
     .buttonBox #startStop {
       width: 48%;
       height: 100%;
@@ -497,6 +496,14 @@ body {
       padding: .6em; }
     .buttonBox .blockButton {
       height: 100%; } }
+.intervalDisplay {
+  height: 100%;
+  width: 50%; }
+
+.label {
+  font-family: sans-serif;
+  font-weight: bold; }
+
 @media (max-width: 306px) {
   h1 {
     font-size: 1.5rem; }
